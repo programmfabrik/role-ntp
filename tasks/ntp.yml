@@ -1,14 +1,9 @@
 ---
-- fail: msg="variable ntp_timezone not configured properly"
-  when: ntp_timezone == ''
-
-- fail: msg="variable ntp_servers not configured properly"
-  when: ntp_servers == []
-
 - include_vars: "{{ var_items }}"
   with_first_found:
     - "{{ ansible_distribution }}.{{ ansible_lsb.codename }}.yml"
     - "{{ ansible_distribution }}.yml"
+    - "default.yml"
   loop_control:
     loop_var: var_items
 
@@ -16,6 +11,7 @@
   with_first_found:
     - "install/{{ ansible_distribution }}.{{ ansible_lsb.codename }}.yml"
     - "install/{{ ansible_distribution }}.yml"
+    - "install/default.yml"
   loop_control:
     loop_var: distro_installer
   tags:
@@ -25,6 +21,7 @@
   with_first_found:
     - "configure/{{ ansible_distribution }}.{{ ansible_lsb.codename }}.yml"
     - "configure/{{ ansible_distribution }}.yml"
+    - "configure/default.yml"
   loop_control:
     loop_var: distro_configurator
   tags:
