@@ -1,5 +1,8 @@
 
-# Created by https://www.gitignore.io/api/linux,python,pycharm,vim
+# Created by https://www.gitignore.io/api/linux,python,pycharm,ansible,vim,nano
+
+### Ansible ###
+*.retry
 
 ### Linux ###
 *~
@@ -15,6 +18,8 @@
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+#!! ERROR: nano is undefined. Use list command to see defined gitignore types !!#
 
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -89,7 +94,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -124,7 +128,7 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 .hypothesis/
 
 # Translations
@@ -160,13 +164,14 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# dotenv
+# Environments
 .env
-
-# virtualenv
 .venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -177,6 +182,9 @@ ENV/
 
 # mkdocs documentation
 /site
+
+# mypy
+.mypy_cache/
 
 ### Vim ###
 # swap
@@ -191,4 +199,4 @@ Session.vim
 # auto-generated tag files
 tags
 
-# End of https://www.gitignore.io/api/linux,python,pycharm,vim
+# End of https://www.gitignore.io/api/linux,python,pycharm,ansible,vim,nano
