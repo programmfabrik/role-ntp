@@ -14,7 +14,7 @@ galaxy_info:
     - xenial
 
   galaxy_tags:
-    - blunix
-    - ntp
+  - blunix
+  - ntp
 
 dependencies: []
