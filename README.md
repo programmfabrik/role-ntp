@@ -1,46 +1,33 @@
-Ansible Role NTP
-=========
+# Ansible Role NTP
 
-Installs and configures the NTP service daemon.
+This role installs and configures NTPd.
 
-Role Variables
---------------
+## Example Play
 
-- **ntp_timezone: ""**
-  Timezone string.  
-  Example: `ntp_timezone: Europe/Berlin`
+```yaml
+- hosts: all
+  vars:
+    ntp_timezone: Europe/Berlin
+  roles:
+     - blunix.role-ntp
+```
 
-- **ntp_servers: []**  
-  List of NTP timeserver strings that will be written to `ntp.conf`.  
-  Example: `ntp_servers: ['0.europe.pool.ntp.org', '1.europe.pool.ntp.org']`
-  
-Dependencies
-------------
+# License
 
-none.
+Apache-2.0
 
-Example Playbook
-----------------
+# Author Information
 
-    - hosts: servers
-      roles:
-         - ntp
-
-License
--------
-
-Apache
-
-Author Information
-------------------
-
-Service and support for orchestrated hosting environments, continuous integration/deployment/delivery and various Linux and open-source technology stacks are available from:
+Service and support for orchestrated hosting environments,
+continuous integration/deployment/delivery and various Linux
+and open-source technology stacks are available from:
 
 ```
-Blunix GmbH - Professional Linux Service
+Blunix GmbH - Consulting for Linux Hosting 24/7
 Glogauer Straße 21
 10999 Berlin - Germany
 
 Web: www.blunix.org
-Email: mailto:service@blunix.org
+Email: service[at]blunix.org
+Phone: (+49) 30 / 12 08 39 90
 ```

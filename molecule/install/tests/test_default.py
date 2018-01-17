@@ -32,4 +32,3 @@ def test_upstreams(File, upstream):
             return True
 
     raise AssertionError("upstream not found in configuration file: {}".format(upstream))
-

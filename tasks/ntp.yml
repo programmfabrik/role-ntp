@@ -1,4 +1,3 @@
----
 - name: include distro-specific variables
   include_vars: "{{ var_items }}"
   with_first_found:
@@ -16,8 +15,6 @@
     - "install/default.yml"
   loop_control:
     loop_var: distro_installer
-  tags:
-    - install
 
 - name: include distro configurator
   include: "{{ distro_configurator }}"
@@ -27,5 +24,3 @@
     - "configure/default.yml"
   loop_control:
     loop_var: distro_configurator
-  tags:
-    - configure
