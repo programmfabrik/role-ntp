@@ -2,17 +2,7 @@
 - name: Converge
   hosts: all
   become: yes
-  gather_facts: False
-  tasks:
-    - name: Install python for Ansible
-      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
-      become: True
-      changed_when: False
-
-- name: Converge
-  hosts: all
-  become: yes
   vars:
-    ntp_enabled: no
+    ntp_timezone: Europe/Berlin
   roles:
     - role: role-ntp
