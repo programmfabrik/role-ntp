@@ -1,10 +1,10 @@
-- name: configure ntp
+- name: configuring NTP
   template:
     src: ntp.conf.j2
     dest: /etc/ntp.conf
   notify:
     - restart ntp
 
-- name: configure local timezone
+- name: configuring local timezone
   timezone:
     name: "{{ ntp_timezone }}"
